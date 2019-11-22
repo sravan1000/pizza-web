@@ -145,75 +145,145 @@ export class Privilege extends Component {
 
         let optional_type_field;
         if(this.state.privilege_type === "x_for_Y"){
-            optional_type_field = <div> 
-                <label> x for y</label>
-                <input type='text' name="x_for_y" value = {this.state.x_for_y} onChange = {this.ChangeHandler}/>
-                </div>
+            optional_type_field = <div className = "form-element"> 
+                <div className = 'form-label'><label> x for y</label></div>
+                <div className = 'form-tag'><input type='text' name="x_for_y" value = {this.state.x_for_y} onChange = {this.ChangeHandler}/>
+                </div></div>
 
         }else if(this.state.privilege_type === "discount"){
 
-            optional_type_field = <div>
-                <label> discount </label>
-                <input type='text' name="discount" value = {this.state.discount} onChange = {this.ChangeHandler}/>
-                </div> 
+            optional_type_field = <div className = "form-element"> 
+                <div className = 'form-label'><label> discount </label></div>
+                <div className = 'form-tag'><input type='text' name="discount" value = {this.state.discount} onChange = {this.ChangeHandler}/>
+                </div> </div>
 
         }else if(this.state.privilege_type === "flat_cost"){
-            optional_type_field = <div> 
-                <label> flat cost </label>
-                <input type='text' name="flat_cost" value = {this.state.flat_cost} onChange = {this.ChangeHandler}/> 
-                </div>
+            optional_type_field = <div className = "form-element"> 
+            <div className = 'form-label'><label> flat cost </label></div>
+            <div className = 'form-tag'> <input type='text' name="flat_cost" value = {this.state.flat_cost} onChange = {this.ChangeHandler}/> 
+                </div></div>
         }
         
         return (
             <div>
                 <form onSubmit={this.submitHandler}>
+                <div className = 'form-container'>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> Name </label>
+                                </div>
+                                <div className = 'form-tag'>
+                                <input type='text' name="name" value = {this.state.name} onChange={this.ChangeHandler}/> 
+                                </div>
 
-                    <label> Name </label>
-                    <input type='text' name="name" value = {this.state.name} onChange={this.ChangeHandler}/> 
+                    </div>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> Company </label>
+                                </div>
+                                <div className = 'form-tag'>
+                                <select value = {this.state.company} name= "company" onChange = {this.ChangeHandler}>
+                                <option value= ""> Please select company</option>
+                                {dropdown}
+                                </select>
+                                </div>
 
-                    <label> Company </label>
-                    <select value = {this.state.company} name= "company" onChange = {this.ChangeHandler}>
-                        <option value= ""> Please select company</option>
-                        {dropdown}
-                    </select>
+                    </div>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> item </label>
+                                </div>
+                                <div className = 'form-tag'>
+                                <select value = {this.state.item} name= "item" onChange = {this.ChangeHandler}>
+                                <option value= ""> Please select item</option>
+                                {itemsDropdown}
+                                </select>
+                                </div>
 
+                    </div>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> Privilege Type </label>
+                                </div>
+                                <div className = 'form-tag'>
+                                <select value = {this.state.privilege_type} name= "privilege_type" onChange = {this.ChangeTypeHandler}>
+                                <option value= ""> Please select Privilege type</option>
+                                {typeDropdown}
+                                </select>
+                                </div>
 
-                    <label> item </label>
-                    {/* <input type='text' name="item" value = {this.state.item} onChange={this.ChangeHandler}/>  */}
-                    <select value = {this.state.item} name= "item" onChange = {this.ChangeHandler}>
-                        <option value= ""> Please select item</option>
-                        {itemsDropdown}
-                    </select>
-
-                    <label> Privilege Type </label>
-                    {/* <input type='text' name="privilege_type" value = {this.state.privilege_type} onChange={this.ChangeHandler}/>  */}
-
-                    <select value = {this.state.privilege_type} name= "privilege_type" onChange = {this.ChangeTypeHandler}>
-                        <option value= ""> Please select Privilege type</option>
-                        {typeDropdown}
-                    </select>
-
+                    </div>
                     {optional_type_field}
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> discription </label>
+                                </div>
+                                <div className = 'form-tag'>
+                                <input type='text' name="discription" value = {this.state.discription} onChange = {this.ChangeHandler}/> 
+                                </div>
 
-                    <label> discription </label>
-                    <input type='text' name="discription" value = {this.state.discription} onChange = {this.ChangeHandler}/> 
+                    </div>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> min items order </label>
 
-                    <label> min items order </label>
-                    <input type='text' name="min_items_order" value = {this.state.min_items_order} onChange = {this.ChangeHandler}/> 
+                                </div>
+                                <div className = 'form-tag'>
+                                <input type='text' name="min_items_order" value = {this.state.min_items_order} onChange = {this.ChangeHandler}/> 
 
-                    <label> min purchase limit </label>
-                    <input type='text' name="min_purchase_limit" value = {this.state.min_purchase_limit} onChange = {this.ChangeHandler}/> 
+                                </div>
 
-                    <label> max redemptions </label>
-                    <input type='text' name="max_redemptions" value = {this.state.max_redemptions} onChange = {this.ChangeHandler}/> 
+                    </div>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> min purchase limit </label>
 
-                    <label> start time </label>
-                    <DateTimePicker name= 'start_time' value = {this.state.start_time} onChange = {this.ChangeStartDateHandler} />
+                                </div>
+                                <div className = 'form-tag'>
+                                <input type='text' name="min_purchase_limit" value = {this.state.min_purchase_limit} onChange = {this.ChangeHandler}/> 
+
+                                </div>
+
+                    </div>
+
+                    <div className = "form-element">
+                                <div className = 'form-label'>               
+                                <label> max redemptions </label>
+
+                                </div>
+                                <div className = 'form-tag'>
+                                <input type='text' name="max_redemptions" value = {this.state.max_redemptions} onChange = {this.ChangeHandler}/> 
+
+                                </div>
+
+                    </div>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> start time </label>
            
-                    <label> end time </label>
-                    <DateTimePicker name= 'end_time' value = {this.state.end_time} onChange = {this.ChangeEndDateHandler} />
+                                </div>
+                                <div className = 'form-tag'>
+                                <DateTimePicker name= 'start_time' value = {this.state.start_time} onChange = {this.ChangeStartDateHandler} />
            
+                                </div>
+
+                    </div>
+                    <div className = "form-element">
+                                <div className = 'form-label'>
+                                <label> end time </label>
+           
+                                </div>
+                                <div className = 'form-tag'>
+                                <DateTimePicker name= 'end_time' value = {this.state.end_time} onChange = {this.ChangeEndDateHandler} />
+           
+                                </div>
+
+                    </div>
+
                     <button type= "submit"> Add Items </button>
+
+                </div>
+
                 </form>
             </div>
         )

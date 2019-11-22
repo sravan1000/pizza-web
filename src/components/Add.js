@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Company from './forms/Company';
 import Item from './forms/Item';
 import Privilege from './forms/Privilege';
+import '../App.css';
 
 
 export class Add extends Component {

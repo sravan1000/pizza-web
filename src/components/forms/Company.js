@@ -58,19 +58,53 @@ export class Company extends Component {
         return (
             <div>
                 <form onSubmit={this.submitHandler}>
-                    <label> Name</label>
-                    <input type='text' name='name' value = {this.state.name} onChange={this.ChangeHandler}/> 
 
-                    <label> Address</label>
-                    <input type='text' name='address' value = { this.state.address} onChange = {this.ChangeHandler}/> 
+                    <div className="form-container">
 
-                    <label> Contact</label>
-                    <input type='text' name='contact' value = { this.state.contact} onChange = {this.ChangeHandler}/> 
+                        <div className = "form-element">
+                            <div className = 'form-label'>
+                                <label> Name</label>
+                            </div>
+                            <div className = 'form-tag'>
+                                <input type='text' name='name' value = {this.state.name} onChange={this.ChangeHandler}/> 
+                            </div>
+                        </div>
 
-                    <label> Discription</label>
-                    <input type='text' name='discription' value = { this.state.discription} onChange = {this.ChangeHandler}/> 
+                        <div className = "form-element">
+                            <div className = 'form-label'>
+                                <label> Address</label>
+                            </div>
+                            <div className = 'form-tag'>
+                                <input type='text' name='address' value = { this.state.address} onChange = {this.ChangeHandler}/> 
+                            </div>
 
-                    <button type= "submit"> Add Company </button>
+                        </div>
+
+                        <div className = "form-element">
+                            <div className = 'form-label'>
+                                <label> Contact</label>
+                            </div>
+                            <div className = 'form-tag'>
+                            <input type='text' name='contact' value = { this.state.contact} onChange = {this.ChangeHandler}/> 
+                            </div>
+
+                        </div>
+
+                        <div className = "form-element">
+                            <div className = 'form-label'>
+                                <label> Discription</label>
+                            </div>
+                            <div className = 'form-tag'>
+                                <input type='text' name='discription' value = { this.state.discription} onChange = {this.ChangeHandler}/> 
+                            </div>
+
+                        </div>
+                        <div className = "submit-div">
+                        <button className = "submit-btn" type= "submit"> Add Company </button>
+                        </div>
+                    </div>
+
+                    
                 </form>
             
             </div>

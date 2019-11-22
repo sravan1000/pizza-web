@@ -74,21 +74,49 @@ export class Item extends Component {
     }
     render() {
 
-        // let dropdown = this.state.companydata.map((companyItem) => 
-        // <option value = {companyItem._id} key= {companyItem._id}> {companyItem.name}</option>
-        // )
-        
         return (
             <div>
                 <form onSubmit={this.submitHandler}>
-                    <label> Name</label>
-                    <input type='text' name="name" value = {this.state.name} onChange={this.ChangeHandler}/> 
+                <div className = 'form-container'>
+                <div className = "form-element">
+                            <div className = 'form-label'>
+                            <label> Name</label>
+                            </div>
+                            <div className = 'form-tag'>
+                            <input type='text' name="name" value = {this.state.name} onChange={this.ChangeHandler}/> 
+                            </div>
 
-                    <label> Discription</label>
-                    <input type='text' name="discription" value = {this.state.discription} onChange = {this.ChangeHandler}/> 
+                </div>
 
-                    <label> Cost </label>
-                    <input type='text' name="cost" value = {this.state.cost} onChange = {this.ChangeHandler}/> 
+                <div className = "form-element">
+                            <div className = 'form-label'>
+                            <label> Discription</label>
+                            </div>
+                            <div className = 'form-tag'>
+                            <input type='text' name="discription" value = {this.state.discription} onChange = {this.ChangeHandler}/> 
+
+                            </div>
+
+                </div>
+
+                <div className = "form-element">
+                            <div className = 'form-label'>
+                            <label> Cost </label>
+                            </div>
+                            <div className = 'form-tag'>
+                            <input type='text' name="cost" value = {this.state.cost} onChange = {this.ChangeHandler}/> 
+                            </div>
+
+                </div>
+
+                <button type= "submit"> Add Items </button>
+                </div>
+                    
+                    
+
+                    
+
+                    
 
                     {/* <label> Company </label>
 
@@ -97,7 +125,7 @@ export class Item extends Component {
                         {dropdown}
                     </select> */}
 
-                    <button type= "submit"> Add Items </button>
+                    
                 </form>
             </div>
         )

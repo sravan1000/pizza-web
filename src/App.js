@@ -16,8 +16,6 @@ class App extends Component{
         <Route path="/list/:type" component = {List}  /> 
         <Route path="/add/:type" component = {Add}  /> 
         <Route path="/edit/:type/:id" component = {Edit}  />
-        {/* <Route  path="/add/:type" component = {Delete} /> */}
-        
       </BrowserRouter>
     )
   }
