@@ -55,8 +55,10 @@ export class List extends Component {
                 console.log("response is for cart", response["data"]);
                 console.log("state.data in ajax call cart",response.data.data)
                 let arr = response.data.data;
+                let totalCost = response.data.totalCost;
                 this.setState({
-                    data: arr
+                    data: arr,
+                    cartValue:totalCost
                 })
             })
 
